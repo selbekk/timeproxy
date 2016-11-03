@@ -1,7 +1,5 @@
 # timeproxy
 
-Not quite production ready yet, but will be very soon
-
 > Simple library for time constants
 
 Creating time constants can be a pain. You want to name them
@@ -24,5 +22,11 @@ const TIMEOUT_LIMIT = tp.FIVE_SECONDS;
 const AGE_LIMIT = tp.ONE_WEEK_AND_SIX_DAYS;
 ```
 
-Let me know if there are features you need I haven't
-implemented yet.
+There's support for seconds, minutes, hours, days and weeks.
+
+## Contribute!
+
+If there are features you'd like to see in this tiny library,
+please let me know through an issue. If you feel up for it,
+please create a pull request and I'll make sure to look at it
+as soon as possible.
