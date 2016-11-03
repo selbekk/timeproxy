@@ -15,6 +15,9 @@ Using some quite clever ES2015 proxies, you can now have both.
 npm install timeproxy --save
 ```
 
+`timeproxy` works by parsing the name of the "constant" you
+specify and returning the amount of milliseconds you require. 
+
 ```javascript
 import tp from 'timeproxy';
 
