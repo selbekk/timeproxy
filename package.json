@@ -1,14 +1,23 @@
 {
   "name": "timeproxy",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "A tiny library for creating time based constants",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "babel src/index.js -o lib/index.js",
     "test": "jest",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "preversion": "npm test",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "time",
+    "proxy",
+    "constants",
+    "milliseconds",
+  ],
+  "author": "Kristofer Selbekk <kristofer@selbekk.io>",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.16.0",
