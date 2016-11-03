@@ -19,6 +19,7 @@
   ],
   "author": "Kristofer Selbekk <kristofer@selbekk.io>",
   "license": "ISC",
+  "repository": "selbekk/timeproxy",
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
