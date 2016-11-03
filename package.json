@@ -15,7 +15,7 @@
     "time",
     "proxy",
     "constants",
-    "milliseconds",
+    "milliseconds"
   ],
   "author": "Kristofer Selbekk <kristofer@selbekk.io>",
   "license": "ISC",
