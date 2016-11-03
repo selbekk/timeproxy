@@ -1,6 +1,4 @@
-import numbers from './numbers';
-import multipliers from './multipliers';
-import units from './units';
+import { numbers, multipliers, units } from './constants';
 
 export default new Proxy({}, {
     get(target, name) {
