@@ -1,4 +1,6 @@
 # timeproxy
+[![Build Status](https://travis-ci.org/selbekk/timeproxy.svg?branch=master)](https://travis-ci.org/selbekk/timeproxy) [![Coverage Status](https://coveralls.io/repos/github/selbekk/timeproxy/badge.svg?branch=master)](https://coveralls.io/github/selbekk/timeproxy?branch=master)
+
 
 > Simple library for time constants
 

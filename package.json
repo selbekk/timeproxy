@@ -7,6 +7,7 @@
     "build": "babel src/index.js -o lib/index.js",
     "test": "jest",
     "test:watch": "npm test -- --watch",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "preversion": "npm test",
     "version": "npm run build",
     "postversion": "git push && git push --tags"
@@ -23,6 +24,7 @@
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
+    "coveralls": "^2.11.15",
     "jest": "^16.0.2"
   }
 }
