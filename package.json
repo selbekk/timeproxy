@@ -4,7 +4,7 @@
   "description": "A tiny library for creating time based constants",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src/index.js -o lib/index.js",
+    "build": "babel src -o lib/index.js",
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
