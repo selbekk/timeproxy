@@ -7,5 +7,5 @@ coverage
 # Logs
 *.log
 
-# Built files
-lib
+# Compiled files
+lib/
