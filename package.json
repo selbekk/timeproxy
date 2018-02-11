@@ -1,6 +1,6 @@
 {
   "name": "timeproxy",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A tiny library for creating time based constants",
   "main": "lib/index.js",
   "scripts": {
