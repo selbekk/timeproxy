@@ -37,17 +37,14 @@ export const numbers = {
 };
 
 export const units = {
+    SECOND: 1000,
     SECONDS: 1000,
+    MINUTE: 1000 * 60,
     MINUTES: 1000 * 60,
+    HOUR: 1000 * 60 * 60,
     HOURS: 1000 * 60 * 60,
+    DAY: 1000 * 60 * 60 * 24,
     DAYS: 1000 * 60 * 60 * 24,
+    WEEK: 1000 * 60 * 60 * 24 * 7,
     WEEKS: 1000 * 60 * 60 * 24 * 7,
 };
-
-Object.assign(units, {
-    SECOND: units.SECONDS,
-    MINUTE: units.MINUTES,
-    HOUR: units.HOURS,
-    DAY: units.DAYS,
-    WEEK: units.WEEKS,
-});
