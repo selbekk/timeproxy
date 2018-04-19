@@ -9,3 +9,6 @@ coverage
 
 # Compiled files
 lib/
+
+# OS stuff
+.DS_Store
