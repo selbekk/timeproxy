@@ -1,6 +1,7 @@
 import tp from '../src';
 
-const SECOND = 1000;
+const MILLISECOND = 1;
+const SECOND = 1000 * MILLISECOND;
 const MINUTE = 60 * SECOND;
 const HOUR = 60 * MINUTE;
 const DAY = 24 * HOUR;
@@ -21,6 +22,11 @@ describe('properties without units', () => {
 });
 
 describe('properties with units', () => {
+    it('returns correct with milliseconds', () => {
+        expect(tp.ONE_MILLISECOND).toBe(1 * MILLISECOND);
+        expect(tp.NINE_HUNDRED_MILLISECONDS).toBe(900 * MILLISECOND);
+        expect(tp.NINETY_THOUSAND_MILLISECONDS).toBe(90000 * MILLISECOND);
+    })
     it('returns correct with seconds', () => {
         expect(tp.TWO_SECONDS).toBe(2 * SECOND);
         expect(tp.THIRTY_SECONDS).toBe(30 * SECOND);

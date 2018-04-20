@@ -39,6 +39,8 @@ export const numbers = {
 };
 
 export const units = {
+    MILLISECOND: 1,
+    MILLISECONDS: 1,
     SECOND: 1000,
     SECONDS: 1000,
     MINUTE: 1000 * 60,
