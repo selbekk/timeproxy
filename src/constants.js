@@ -7,6 +7,8 @@ export const multipliers = {
 
 export const numbers = {
     ZERO: 0,
+    A: 1,
+    AN: 1,
     ONE: 1,
     TWO: 2,
     THREE: 3,
