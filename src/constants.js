@@ -1,4 +1,13 @@
 export const multipliers = {
+    QUARTER: 1/4,
+    QUARTERS: 1/4,
+    THIRD: 1/3,
+    THIRDS: 1/3,
+    HALF: 1/2,
+    HALVES: 1/2,
+    OF: 1,
+    A: 1,
+    AN: 1,
     HUNDRED: 100,
     THOUSAND: 1000,
     MILLION: 1000000,
@@ -7,8 +16,6 @@ export const multipliers = {
 
 export const numbers = {
     ZERO: 0,
-    A: 1,
-    AN: 1,
     ONE: 1,
     TWO: 2,
     THREE: 3,

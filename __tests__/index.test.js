@@ -95,6 +95,21 @@ describe('properties with single unit', () => {
     });
 });
 
+describe('properties with fraction units', () => {
+    it('works with halves', () => {
+        expect(tp.ONE_HALF_SECOND).toBe(500);
+        expect(tp.THREE_HALVES).toBe(1.5);
+    });
+    it('works with thirds', () => {
+        expect(tp.A_THIRD_DAY).toBe(HOUR * 8);
+        expect(tp.A_THIRD).toBe(1/3);
+    });
+    it('works with quarters', () => {
+        expect(tp.THREE_QUARTERS_HOUR).toBe(HOUR / 4 * 3);
+        expect(tp.A_QUARTER_DAY).toBe(HOUR * 6);
+    });
+});
+
 describe('properties with a and an', () => {
     it('counts for one', () => {
         expect(tp.A_SECOND).toBe(SECOND);
@@ -105,7 +120,15 @@ describe('properties with a and an', () => {
         expect(tp.A_HOUR).toBe(HOUR);
     });
     it('see what I did there?', () => {});
-})
+});
+
+describe('properties with of', () => {
+    it('reads better, but doesn\'t cause trouble', () => {
+        expect(tp.HALF_OF_A_MINUTE).toBe(MINUTE / 2);
+        expect(tp.THIRTY_OF_SECONDS).toBe(SECOND * 30);
+        expect(tp.A_QUARTER_OF_AN_HOUR).toBe(MINUTE * 15);
+    });
+});
 
 describe('edge cases', () => {
     it('works with any case', () => {
@@ -117,5 +140,5 @@ describe('edge cases', () => {
 
     it('works with several multipliers back to back', () => {
         expect(tp.HUNDRED_THOUSAND_SECONDS).toBe(100 * 1000 * SECOND);
-    })
+    });
 });
