@@ -5,7 +5,6 @@ export const multipliers = {
     THIRDS: 1/3,
     HALF: 1/2,
     HALVES: 1/2,
-    OF: 1,
     A: 1,
     AN: 1,
     HUNDRED: 100,

@@ -24,9 +24,13 @@ function parse(token) {
 }
 
 function find(name) {
+
+    const isFuture = name.startsWith('IN');
+    const isPast = name.endsWith('AGO');
+
     const terms = name.split('_')
         .map(term => term.toUpperCase())
-        .filter(term => term !== 'AND')
+        .filter(term => !['IN', 'AGO', 'AND', 'OF'].includes(term))
         .map(parse);
 
     let sum = 0;
@@ -52,5 +56,12 @@ function find(name) {
         }
     }
 
-    return partSum + sum;
+    sum += partSum;
+
+    if (isFuture) {
+        return Date.now() + sum;
+    } else if (isPast) {
+        return Date.now() - sum;
+    } 
+    return sum;
 }

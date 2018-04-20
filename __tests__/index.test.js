@@ -82,6 +82,7 @@ describe('properties with combined units', () => {
 
     it('works witn several units', () => {
         expect(tp.ONE_HOURS_TWO_MINUTES_THREE_SECONDS).toBe(HOUR + 2 * MINUTE + 3 * SECOND);
+        expect(tp.NINE_WEEKS_TWELVE_DAYS_SEVEN_MINUTES_AND_HALF_A_SECOND).toBe(WEEK * 9 + DAY * 12 + MINUTE * 7 + 500);
     });
 });
 
@@ -98,6 +99,7 @@ describe('properties with single unit', () => {
 describe('properties with fraction units', () => {
     it('works with halves', () => {
         expect(tp.ONE_HALF_SECOND).toBe(500);
+        expect(tp.HALF_A_SECOND).toBe(500);
         expect(tp.THREE_HALVES).toBe(1.5);
     });
     it('works with thirds', () => {
@@ -127,6 +129,23 @@ describe('properties with of', () => {
         expect(tp.HALF_OF_A_MINUTE).toBe(MINUTE / 2);
         expect(tp.THIRTY_OF_SECONDS).toBe(SECOND * 30);
         expect(tp.A_QUARTER_OF_AN_HOUR).toBe(MINUTE * 15);
+    });
+});
+
+describe('properties that are relative in time', () => {
+    it('works with past', () => {
+        const now = Date.now();
+        Date.now = jest.fn(() => now);
+
+        expect(tp.AN_HOUR_AGO).toBe(now - HOUR);
+        expect(tp.A_MINUTE_THIRTY_SECONDS_AGO).toBe(now - (MINUTE + 30 * SECOND));
+    });
+    it('works with future', () => {
+        const now = Date.now();
+        Date.now = jest.fn(() => now);
+
+        expect(tp.IN_AN_HOUR).toBe(now + HOUR);
+        expect(tp.IN_A_WEEK_AND_SIX_DAYS).toBe(now + (WEEK) + (DAY * 6));
     });
 });
 

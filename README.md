@@ -14,20 +14,34 @@ Using some quite clever ES2015 proxies, you can now have both.
 ## Usage
 
 ```bash
-npm install timeproxy --save
+npm install timeproxy
 ```
 
 `timeproxy` works by parsing the name of the "constant" you
 specify and returning the amount of milliseconds you require. 
 
-```javascript
+```ks
 import tp from 'timeproxy';
 
 const TIMEOUT_LIMIT = tp.FIVE_SECONDS;
 const AGE_LIMIT = tp.ONE_WEEK_AND_SIX_DAYS;
 ```
 
-There's support for seconds, minutes, hours, days and weeks.
+There's support for seconds, minutes, hours, days and weeks. You can even write 
+fractions!
+
+Here's a few examples of what you can do: 
+
+```js
+import tp from 'timeproxy';
+
+const REQUEST_TIMEOUT = tp.THIRTY_SECONDS;
+const UPDATE_DELAY = tp.HALF_A_SECOND;
+const COOKIE_EXPIRATION = tp.FOUR_WEEKS;
+const IN_ALMOST_A_MINUTE = tp.IN_FIFTY_NINE_SECONDS;
+```
+
+I've [written a blog post](https://medium.com/@selbekk/timeproxy-a-library-for-making-readable-time-constants-5f6bdd9c598d) about this as well - please refer to it for more examples. 
 
 ## Contribute!
 
