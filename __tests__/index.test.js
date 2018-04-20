@@ -26,7 +26,8 @@ describe('properties with units', () => {
         expect(tp.ONE_MILLISECOND).toBe(1 * MILLISECOND);
         expect(tp.NINE_HUNDRED_MILLISECONDS).toBe(900 * MILLISECOND);
         expect(tp.NINETY_THOUSAND_MILLISECONDS).toBe(90000 * MILLISECOND);
-    })
+    });
+
     it('returns correct with seconds', () => {
         expect(tp.TWO_SECONDS).toBe(2 * SECOND);
         expect(tp.THIRTY_SECONDS).toBe(30 * SECOND);
@@ -93,6 +94,18 @@ describe('properties with single unit', () => {
         expect(tp.ONE_WEEK).toBe(WEEK);
     });
 });
+
+describe('properties with a and an', () => {
+    it('counts for one', () => {
+        expect(tp.A_SECOND).toBe(SECOND);
+        expect(tp.AN_HOUR).toBe(HOUR);
+    });
+    it('doesnt judge you for not knowing grammer', () => {
+        expect(tp.AN_SECOND).toBe(SECOND);
+        expect(tp.A_HOUR).toBe(HOUR);
+    });
+    it('see what I did there?', () => {});
+})
 
 describe('edge cases', () => {
     it('works with any case', () => {
