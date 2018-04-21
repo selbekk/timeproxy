@@ -1,5 +1,5 @@
 # timeproxy
-[![Build Status](https://travis-ci.org/selbekk/timeproxy.svg?branch=master)](https://travis-ci.org/selbekk/timeproxy) [![Coverage Status](https://coveralls.io/repos/github/selbekk/timeproxy/badge.svg?branch=master)](https://coveralls.io/github/selbekk/timeproxy?branch=master)
+[![npm version](https://badge.fury.io/js/timeproxy.svg)](https://badge.fury.io/js/timeproxy) [![Build Status](https://travis-ci.org/selbekk/timeproxy.svg?branch=master)](https://travis-ci.org/selbekk/timeproxy) [![Coverage Status](https://coveralls.io/repos/github/selbekk/timeproxy/badge.svg?branch=master)](https://coveralls.io/github/selbekk/timeproxy?branch=master) [![Y2K Compliant](https://img.shields.io/badge/%F0%9F%97%93-Y2K%20Compliant-bd6867.svg)]
 
 
 > Simple library for time constants
