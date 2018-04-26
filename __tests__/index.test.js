@@ -161,3 +161,45 @@ describe('edge cases', () => {
         expect(tp.HUNDRED_THOUSAND_SECONDS).toBe(100 * 1000 * SECOND);
     });
 });
+
+describe('tagged template literal', () => {
+    it('works with underscores', () => {
+        expect(tp`one_second`).toBe(SECOND);
+        expect(tp`ONE_WEEK`).toBe(WEEK);
+    });
+    it('works with spaces', () => {
+        expect(tp`one second`).toBe(SECOND);
+        expect(tp`ONE WEEK`).toBe(WEEK);
+    });
+    it('works with hyphens', () => {
+        expect(tp`one-second`).toBe(SECOND);
+        expect(tp`ONE-WEEK`).toBe(WEEK);
+    });
+    it('works with a mix of approaches', () => {
+        expect(tp`ONE-WEEK_AND seven minutes`).toBe(WEEK + (MINUTE * 7));
+    });
+
+    it('works with arguments', () => {
+        const sixty = 60;
+        expect(tp`1 day ${60} minutes and ${30} seconds`)
+            .toBe(DAY + (MINUTE * 60) + (30 * SECOND));
+    });
+});
+
+describe('numerics', () => {
+    it('works with proxies', () => {
+        expect(tp.A_MINUTE_20_SECONDS).toBe(MINUTE + (20 * 1000));
+    });
+    it('works with tagged template literals', () => {
+        expect(tp`a minute 60 seconds`).toBe(2 * MINUTE);
+        expect(tp`1 minute 60 seconds`).toBe(2 * MINUTE);
+        expect(tp`1 minute .5 seconds`).toBe(MINUTE + 500);
+    });
+});
+
+describe('alternative usage', () => {
+    it('works when being called as a function', () => {
+        expect(tp(`a minute 45`)).toBe(MINUTE + 45);
+        expect(tp(`a minute ${45}`)).toBe(MINUTE + 45);
+    });
+});

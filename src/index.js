@@ -1,16 +1,26 @@
 import { numbers, multipliers, units } from './constants';
 
-export default new Proxy({}, {
+export default new Proxy(() => {}, {
+    apply(a, b, args) {
+        if (!args[0].raw) {
+            return find(...args);
+        }
+        return find(String.raw(...args));
+    },
     get(target, name) {
         return find(name);
     }
 });
 
+const isNumeric = token => !isNaN(token);
 const isNumber = token => numbers[token] !== undefined;
 const isMultiplier = token => multipliers[token] !== undefined;
 const isUnit = token => units[token] !== undefined;
 
 function parse(token) {
+    if (isNumeric(token)) {
+        return { type: 'number', value: Number(token) };
+    }
     if (isNumber(token)) {
         return { type: 'number', value: numbers[token] };
     }
@@ -28,7 +38,7 @@ function find(name) {
     const isFuture = name.startsWith('IN');
     const isPast = name.endsWith('AGO');
 
-    const terms = name.split('_')
+    const terms = name.split(/[_\s\-]+/)
         .map(term => term.toUpperCase())
         .filter(term => !['IN', 'AGO', 'AND', 'OF'].includes(term))
         .map(parse);

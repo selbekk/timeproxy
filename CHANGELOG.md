@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.0
+- Added support for using `timeproxy` as a tagged template literal as well!
+
 ## v1.1.0
 - Added support for "in" prefix and "ago" suffix for relative time
 - Added support for "a" and "an" instead of "one"

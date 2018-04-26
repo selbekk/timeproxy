@@ -4,6 +4,8 @@
 
 > Simple library for time constants
 
+** Now with template literal support **
+
 Creating time constants can be a pain. You want to name them
 after what they are, like `SESSION_TIMEOUT` or `MAX_REQUESTS`,
 but you also want to make sure the code reflects how long of
@@ -20,11 +22,21 @@ npm install timeproxy
 `timeproxy` works by parsing the name of the "constant" you
 specify and returning the amount of milliseconds you require. 
 
-```ks
+```js
 import tp from 'timeproxy';
 
 const TIMEOUT_LIMIT = tp.FIVE_SECONDS;
 const AGE_LIMIT = tp.ONE_WEEK_AND_SIX_DAYS;
+```
+
+If you prefer, you can use template literals instead:
+
+```js
+import tp from 'timeproxy';
+
+const TIMEOUT_LIMIT = tp`five seconds`;
+const AGE_LIMIT = tp`1 week and 6 days`;
+const SESSION_TIMEOUT = tp`${60} minutes`;
 ```
 
 There's support for seconds, minutes, hours, days and weeks. You can even write 
@@ -39,9 +51,15 @@ const REQUEST_TIMEOUT = tp.THIRTY_SECONDS;
 const UPDATE_DELAY = tp.HALF_A_SECOND;
 const COOKIE_EXPIRATION = tp.FOUR_WEEKS;
 const IN_ALMOST_A_MINUTE = tp.IN_FIFTY_NINE_SECONDS;
+
+const REQUEST_TIMEOUT = tp`thirty seconds`;
+const UPDATE_DELAY = tp`.5 seconds`;
+const COOKIE_EXPIRATION = tp`4 weeks`;
+const IN_ALMOST_A_MINUTE = tp`IN_59-SEconds`;
 ```
 
-I've [written a blog post](https://medium.com/@selbekk/timeproxy-a-library-for-making-readable-time-constants-5f6bdd9c598d) about this as well - please refer to it for more examples. 
+I've [written a blog post](https://medium.com/@selbekk/timeproxy-a-library-for-making-readable-time-constants-5f6bdd9c598d) 
+about this as well - please refer to it for more examples. 
 
 ## Contribute!
 
