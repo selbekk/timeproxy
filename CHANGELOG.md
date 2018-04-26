@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.1
+- Return 0 when called with either no or a falsy argument
+
 ## v1.2.0
 - Added support for using `timeproxy` as a tagged template literal as well!
 

@@ -199,6 +199,7 @@ describe('numerics', () => {
 
 describe('alternative usage', () => {
     it('works when being called as a function', () => {
+        expect(tp()).toBe(0);
         expect(tp(`a minute 45`)).toBe(MINUTE + 45);
         expect(tp(`a minute ${45}`)).toBe(MINUTE + 45);
     });

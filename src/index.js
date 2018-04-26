@@ -2,7 +2,7 @@ import { numbers, multipliers, units } from './constants';
 
 export default new Proxy(() => {}, {
     apply(a, b, args) {
-        if (!args[0].raw) {
+        if (!args[0] || !args[0].raw) {
             return find(...args);
         }
         return find(String.raw(...args));
@@ -34,6 +34,9 @@ function parse(token) {
 }
 
 function find(name) {
+    if(!name) {
+        return 0;
+    }
 
     const isFuture = name.startsWith('IN');
     const isPast = name.endsWith('AGO');
