@@ -4,7 +4,7 @@
 
 > Simple library for time constants
 
-** Now with template literal support **
+**Now with template literal support**
 
 Creating time constants can be a pain. You want to name them
 after what they are, like `SESSION_TIMEOUT` or `MAX_REQUESTS`,
