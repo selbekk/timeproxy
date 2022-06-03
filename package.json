@@ -1,6 +1,6 @@
 {
   "name": "timeproxy",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "A tiny library for creating time based constants",
   "main": "lib/index.js",
   "scripts": {
@@ -19,7 +19,8 @@
     "milliseconds"
   ],
   "files": [
-    "lib"
+    "lib",
+    "types"
   ],
   "types": "types/types.d.ts",
   "author": "Kristofer Selbekk <kristofer@selbekk.io>",

@@ -8,7 +8,7 @@ coverage
 *.log
 
 # Compiled files
-lib/
+lib
 
 # OS stuff
 .DS_Store
